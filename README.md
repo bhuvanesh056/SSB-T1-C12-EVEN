@@ -31,8 +31,43 @@ PROCEDURE:
 6.Verify the generated results
 
 PROGRAM:
+```
+Ac = 7.9;
+Am = 15.8;
+Fm = 306;
+Fc = 3060;
+Fs = 30600;
+t=0:1/fs:2/fm;
+m1=Am*cos(2*3.14*fm*t);
+subplot(4,1,1);
+plot(t, m1);
+cl=Ac*cos(2*3.14*fc*t);
+subplot(4,1,2);
+plot(t,cl);
+m2=Am*cos(1.57-(2*3.14*fm*t));
+c2=Ac*cos(1.57-(2*3.14*fc*t));
+a = cl.*m1;
+b = c2.* m2;
+c = a + b;
+subplot(4,1,3);
+plot(t, c);
+d=a-b;
+subplot(4,1,4);
+plot(t, d);
+
+```
+TABULATION:
+
+<img width="1280" height="802" alt="image" src="https://github.com/user-attachments/assets/9433949b-e7aa-45e2-b23c-d930a1d965ac" />
+
+
 
 OUTPUT GRAPH:
 
+<img width="1919" height="1199" alt="image" src="https://github.com/user-attachments/assets/944474d4-2a39-472c-b5ca-33780115abcb" />
+
+
 RESULT:
+
+Thus the single side band supressed carrier is generated.
 
